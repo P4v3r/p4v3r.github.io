@@ -1,0 +1,164 @@
+/* === P4V3R's DOMAIN - STYLES === */
+/* i know, i should use a .css file but im lazy lol */
+
+body {
+  background-color: #000033;
+  background-image: url('bg.gif');
+  margin: 0;
+  padding: 20px;
+  font-family: verdana, arial, sans-serif;
+  font-size: 11px;
+  color: #00FF00;
+}
+
+a:link { color: #FF00FF; }
+a:visited { color: #9966FF; }
+a:hover { color: #00FFFF; }
+
+.mainbox {
+  width: 750px;
+  margin: 0 auto;
+  background-color: #000033;
+  border: 2px solid #6666FF;
+}
+
+.header {
+  background-color: #330066;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 2px solid #FF00FF;
+  font-family: comic sans ms, cursive;
+}
+
+.nav {
+  background-color: #003366;
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px dashed #666699;
+}
+
+.nav a {
+  padding: 5px 15px;
+  margin: 2px;
+  background-color: #330099;
+  border: 1px outset #9999FF;
+  color: #00FFFF;
+  text-decoration: none;
+  font-size: 10px;
+  font-family: comic sans ms, cursive;
+}
+
+.nav a:hover {
+  background-color: #6600FF;
+  border-style: inset;
+}
+
+.content {
+  padding: 20px;
+  background-color: #000033;
+}
+
+.counter {
+  text-align: center;
+  padding: 10px;
+  font-family: ms sans serife, arial;
+  font-size: 10px;
+  color: #999999;
+}
+
+.footer {
+  background-color: #330066;
+  padding: 10px;
+  text-align: center;
+  font-size: 9px;
+  border-top: 2px solid #FF00FF;
+  color: #9999FF;
+}
+
+h2 {
+  font-family: impact, arial black;
+  color: #FF00FF;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-bottom: 1px dashed #FF00FF;
+  padding-bottom: 5px;
+}
+
+.projectbox {
+  background-color: #003366;
+  border: 1px solid #6666FF;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.projecttitle {
+  font-family: comic sans ms, cursive;
+  font-size: 14px;
+  color: #00FFFF;
+  font-weight: bold;
+}
+
+.projectdesc {
+  color: #CCCCCC;
+  font-size: 10px;
+  margin: 5px 0;
+}
+
+.projectlink a {
+  font-size: 10px;
+  font-family: arial;
+}
+
+.section {
+  margin: 20px 0;
+}
+
+.listbox {
+  background-color: #001a33;
+  border-left: 3px solid #FF00FF;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.listbox li {
+  margin: 5px 0;
+  color: #99FFCC;
+  font-size: 10px;
+}
+
+.blink {
+  text-decoration: blink;
+}
+
+/* marquee styling for browsers that support it */
+marquee {
+  font-family: comic sans ms;
+  color: #00FF00;
+}
+
+/* old school horizontal rule */
+hr {
+  border: 0;
+  border-top: 1px dashed #6666FF;
+  margin: 15px 0;
+}
+
+/* small text */
+.small {
+  font-size: 9px;
+  color: #999999;
+}
+
+.guestbook {
+  text-align: center;
+  padding: 10px;
+  background-color: #003300;
+  border: 1px dashed #00FF00;
+  margin: 10px 0;
+}
+
+.guestbook a {
+  color: #00FF00;
+  font-family: comic sans ms;
+  font-size: 11px;
+}
