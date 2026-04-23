@@ -1,0 +1,35 @@
+{
+  "macos": {
+    "machine": "MacBook Pro (M3 Max)",
+    "os": "macOS Sequoia 15.x",
+    "launcher": "Raycast",
+    "terminal": "WezTerm + Zsh + Starship",
+    "editor": "Neovim / Zed",
+    "browser": "Firefox (primary) + Safari (secondary)",
+    "music": "Spotify",
+    "messenger": "Telegram",
+    "productivity": "Obsidian, Notion"
+  },
+  "coding": {
+    "ai_assistants": [
+      "Claude Code (main agent)",
+      "pi-coding-agent (custom setup)",
+      "Copilot for autocomplete"
+    ],
+    "languages": ["TypeScript", "Python", "Rust", "Svelte"],
+    "tools": ["Docker", "Git", "npm", "pip"],
+    "infra": ["Cloudflare Workers", "Self-hosted services"]
+  },
+  "privacy": {
+    "os": "macOS + hardening",
+    "browser": "Firefox with Arkenfox config",
+    "vpn": "Self-hosted WireGuard",
+    "dns": "Encrypted DNS (DoH)",
+    "mfa": "YubiKey + TOTP",
+    "passwords": "Bitwarden",
+    "messenger": "Signal + Telegram",
+    "email": "Proton Mail",
+    "files": " VeraCrypt encrypted volumes",
+    "search": "DuckDuckGo + custom SearX instance"
+  }
+}

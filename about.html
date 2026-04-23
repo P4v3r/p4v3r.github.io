@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="P4V3R Setup - My tools for macOS, coding, and privacy">
+  <meta name="theme-color" content="#0a0a12">
+  <title>SETUP /// P4V3R ///</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+</head>
+<body>
+
+<!-- HEADER MARQUEE -->
+<div class="header-bar">
+  <div class="marquee-container">
+    <span class="marquee-text">
+      ▀▀▀ MY SETUP ▀▀▀ THE TOOLS OF THE TRADE ▀▀▀ PRIVACY HARDENED ▀▀▀ ZERO TRUST ▀▀▀ 
+      SELF-HOSTED ▀▀▀ ENCRYPTED BY DEFAULT ▀▀▀ OPEN SOURCE ONLY ▀▀▀ NO SPYWARE ▀▀▀
+    </span>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link">[ HOME ]</a>
+  <a href="projects.html" class="nav-link">[ PROJECTS ]</a>
+  <a href="about.html" class="nav-link nav-link-active">[ SETUP ]</a>
+  <a href="favorites.html" class="nav-link">[ FAVORITES ]</a>
+  <a href="watching.html" class="nav-link">[ WATCHING ]</a>
+  <a href="blog.html" class="nav-link">[ BLOG ]</a>
+</nav>
+
+<!-- BACK HOME -->
+<a href="index.html" class="back-home">[ <<< BACK TO HOME ]</a>
+
+<!-- SECTION HEADER -->
+<section class="section-header">
+  MY SETUP
+</section>
+
+<!-- SETUP CONTAINER -->
+<div class="list-container" id="setup-container">
+  <!-- Loaded via JS -->
+  <div class="list-section" data-label="Loading...">
+    <ul class="list-items">
+      <li>Loading setup...</li>
+    </ul>
+  </div>
+</div>
+
+<!-- BADGES -->
+<div class="badges-container">
+  <span class="badge">PRIVACY OVER CONVENIENCE</span>
+  <span class="badge">OPEN SOURCE ONLY</span>
+  <span class="badge badge-old">SELF-HOSTED SERVICES</span>
+</div>
+
+<!-- HIT COUNTER -->
+<div class="hit-counter">
+  <div class="counter-label">SETUP PAGE VISITS:</div>
+  <div class="counter-display" id="hit-counter">000042</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p class="footer-text">/// P4V3R'S DOMAIN © 2026 ///</p>
+  <div class="footer-links">
+    <a href="https://github.com/P4v3r" target="_blank">[ GITHUB ]</a>
+    <a href="https://t.me/P4v3r" target="_blank">[ TELEGRAM ]</a>
+    <a href="mailto:p4v3r@proton.me">[ EMAIL ]</a>
+    <a href="#top">[ BACK TO TOP ]</a>
+  </div>
+</footer>
+
+<script>
+async function loadConfig(filename) {
+  try {
+    const response = await fetch(`_config/${filename}`);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return await response.json();
+  } catch (error) {
+    console.error(`Error loading ${filename}:`, error);
+    return null;
+  }
+}
+
+function incrementHitCounter() {
+  let count = localStorage.getItem('p4v3r_setup_hits') || 42;
+  count = parseInt(count) + 1;
+  localStorage.setItem('p4v3r_setup_hits', count);
+  document.getElementById('hit-counter').textContent = String(count).padStart(6, '0');
+}
+
+async function renderSetup() {
+  const data = await loadConfig('setup.json');
+  const container = document.getElementById('setup-container');
+  if (!data || !container) return;
+  
+  const sectionTitles = {
+    macos: '🍎 macOS Setup',
+    coding: '💻 Coding Setup',
+    privacy: '🔐 Privacy & Security'
+  };
+  
+  let html = '';
+  
+  // macOS section
+  if (data.macos) {
+    html += `<div class="list-section" data-label="${sectionTitles.macos}">
+      <ul class="list-items">`;
+    
+    for (const [key, value] of Object.entries(data.macos)) {
+      const icon = key === 'machine' ? '🖥️' : 
+                   key === 'os' ? '🍎' : 
+                   key === 'terminal' ? '💻' : 
+                   key === 'browser' ? '🌐' : '⚙️';
+      html += `<li><span class="emoji">${icon}</span> ${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}</li>`;
+    }
+    
+    html += `</ul></div>`;
+  }
+  
+  // Coding section
+  if (data.coding) {
+    html += `<div class="list-section" data-label="${sectionTitles.coding}">
+      <ul class="list-items">`;
+    
+    for (const [key, value] of Object.entries(data.coding)) {
+      if (Array.isArray(value)) {
+        html += `<li><span class="emoji">📦</span> ${key.charAt(0).toUpperCase() + key.slice(1)}: ${value.join(', ')}</li>`;
+      } else {
+        html += `<li><span class="emoji">⚙️</span> ${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}</li>`;
+      }
+    }
+    
+    html += `</ul></div>`;
+  }
+  
+  // Privacy section
+  if (data.privacy) {
+    html += `<div class="list-section" data-label="${sectionTitles.privacy}">
+      <ul class="list-items">`;
+    
+    for (const [key, value] of Object.entries(data.privacy)) {
+      const icon = key === 'vpn' ? '🔒' : 
+                   key === 'passwords' ? '🔑' : 
+                   key === 'mfa' ? '🛡️' : 
+                   key === 'email' ? '📧' : 
+                   key === 'search' ? '🔍' : '⚡';
+      html += `<li><span class="emoji">${icon}</span> ${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}</li>`;
+    }
+    
+    html += `</ul></div>`;
+  }
+  
+  container.innerHTML = html;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  incrementHitCounter();
+  renderSetup();
+});
+</script>
+
+</body>
+</html>

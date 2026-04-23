@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="P4V3R Projects - Privacy-focused open source projects">
+  <meta name="theme-color" content="#0a0a12">
+  <title>PROJECTS /// P4V3R ///</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+</head>
+<body>
+
+<!-- HEADER MARQUEE -->
+<div class="header-bar">
+  <div class="marquee-container">
+    <span class="marquee-text">
+      ▀▀▀ PROJECTS ▀▀▀ OPEN SOURCE ▀▀▀ PRIVACY FIRST ▀▀▀ BUILD IN PUBLIC ▀▀▀ ZERO TRACKING ▀▀▀ 
+      CODE IS LAW ▀▀▀ ENCRYPT EVERYTHING ▀▀▀ STAY ANONYMOUS ▀▀▀ NO BACKDOORS ▀▀▀
+    </span>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link">[ HOME ]</a>
+  <a href="projects.html" class="nav-link nav-link-active">[ PROJECTS ]</a>
+  <a href="about.html" class="nav-link">[ SETUP ]</a>
+  <a href="favorites.html" class="nav-link">[ FAVORITES ]</a>
+  <a href="watching.html" class="nav-link">[ WATCHING ]</a>
+  <a href="blog.html" class="nav-link">[ BLOG ]</a>
+</nav>
+
+<!-- BACK HOME -->
+<a href="index.html" class="back-home">[ <<< BACK TO HOME ]</a>
+
+<!-- SECTION HEADER -->
+<section class="section-header">
+  MY PROJECTS
+</section>
+
+<!-- PROJECTS GRID -->
+<div class="projects-grid" id="projects-container">
+  <!-- Loaded via JS -->
+  <div class="project-card">
+    <div class="project-name">Loading...</div>
+  </div>
+</div>
+
+<!-- BADGES -->
+<div class="badges-container">
+  <a href="https://github.com/P4v3r" class="badge badge-old" target="_blank">★ VIEW ALL ON GITHUB ★</a>
+  <span class="badge">ALL PROJECTS ARE OPEN SOURCE</span>
+  <span class="badge">PRIVACY BY DEFAULT</span>
+</div>
+
+<!-- UNDER CONSTRUCTION -->
+<div class="construction-gif">
+  <span class="construction-text">🚧 MORE PROJECTS COMING SOON 🚧</span>
+</div>
+
+<!-- HIT COUNTER -->
+<div class="hit-counter">
+  <div class="counter-label">PROJECTS PAGE VISITS:</div>
+  <div class="counter-display" id="hit-counter">000042</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p class="footer-text">/// P4V3R'S DOMAIN © 2026 ///</p>
+  <div class="footer-links">
+    <a href="https://github.com/P4v3r" target="_blank">[ GITHUB ]</a>
+    <a href="https://t.me/P4v3r" target="_blank">[ TELEGRAM ]</a>
+    <a href="mailto:p4v3r@proton.me">[ EMAIL ]</a>
+    <a href="#top">[ BACK TO TOP ]</a>
+  </div>
+</footer>
+
+<script>
+async function loadConfig(filename) {
+  try {
+    const response = await fetch(`_config/${filename}`);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return await response.json();
+  } catch (error) {
+    console.error(`Error loading ${filename}:`, error);
+    return null;
+  }
+}
+
+function incrementHitCounter() {
+  let count = localStorage.getItem('p4v3r_projects_hits') || 42;
+  count = parseInt(count) + 1;
+  localStorage.setItem('p4v3r_projects_hits', count);
+  document.getElementById('hit-counter').textContent = String(count).padStart(6, '0');
+}
+
+async function renderProjects() {
+  const data = await loadConfig('projects.json');
+  const container = document.getElementById('projects-container');
+  if (!data || !container) return;
+  
+  let html = '';
+  data.forEach(project => {
+    html += `
+      <div class="project-card">
+        <div class="project-name">${project.name}</div>
+        <span class="project-title">${project.title}</span>
+        <p class="project-description">${project.description}</p>
+        <span class="project-lang">${project.language || 'Code'}</span>
+        <a href="${project.url}" class="project-link" target="_blank" rel="noopener">VIEW ON GITHUB</a>
+      </div>
+    `;
+  });
+  
+  container.innerHTML = html;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  incrementHitCounter();
+  renderProjects();
+});
+</script>
+
+</body>
+</html>

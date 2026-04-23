@@ -1,0 +1,30 @@
+[
+  {
+    "name": "void-sh",
+    "title": "Secure In-Browser File Encryption",
+    "description": "Client-side file encryption right in your browser. Privacy-first approach, zero server storage. Files stay on your device, encrypted with military-grade algorithms.",
+    "url": "https://github.com/P4v3r/void-sh",
+    "language": "TypeScript"
+  },
+  {
+    "name": "void-ai",
+    "title": "VOID AI - Self-hosted AI Chat",
+    "description": "Privacy-first self-hosted AI chat application. No data leaves your server. Full control over your conversations and model usage.",
+    "url": "https://github.com/P4v3r/void-ai",
+    "language": "TypeScript"
+  },
+  {
+    "name": "void-key",
+    "title": "Client-side PGP Identity Manager",
+    "description": "Generate, manage, and use PGP keys directly in your browser. Secure message encryption without leaving your device.",
+    "url": "https://github.com/P4v3r/void-key",
+    "language": "Svelte"
+  },
+  {
+    "name": "void-sms",
+    "title": "Italian Temporary Numbers Service",
+    "description": "Privacy-focused Italian temporary phone numbers for SMS verification via Telegram. No personal data required.",
+    "url": "https://github.com/P4v3r/void-sms",
+    "language": "Python"
+  }
+]

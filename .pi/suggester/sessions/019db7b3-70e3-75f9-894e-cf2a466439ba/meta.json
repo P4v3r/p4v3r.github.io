@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "019db7b3-70e3-75f9-894e-cf2a466439ba",
+  "sessionFile": "/Users/Privacy/.pi/agent/sessions/--Users-Privacy-Documents-projects-portfolio-site--/2026-04-23T00-18-03-620Z_019db7b3-70e3-75f9-894e-cf2a466439ba.jsonl",
+  "cwd": "/Users/Privacy/Documents/projects/portfolio-site",
+  "ignoreLegacyPiSessionEntries": true,
+  "legacyMigration": {
+    "performedAt": "2026-04-23T00:18:09.935Z",
+    "importedLegacyEntries": false,
+    "legacyStateEntryCount": 0,
+    "legacyUsageEntryCount": 0,
+    "note": "Legacy suggester-state/suggester-usage pi session entries were imported once into extension-owned storage and are ignored afterwards."
+  }
+}

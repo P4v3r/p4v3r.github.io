@@ -1,0 +1,22 @@
+{
+  "stateVersion": 9,
+  "pendingNextTurnObservation": {
+    "suggestionTurnId": "624e3778",
+    "suggestionShownAt": "2026-04-23T00:27:04.496Z",
+    "userPromptSubmittedAt": "2026-04-23T00:28:07.885Z",
+    "variantName": "default",
+    "strategy": "compact",
+    "requestedStrategy": "compact"
+  },
+  "steeringHistory": [
+    {
+      "turnId": "624e3778",
+      "suggestedPrompt": "Github pages, gratuito e semplice",
+      "actualUserPrompt": "Github pages, gratuito e semplice",
+      "classification": "accepted_exact",
+      "similarity": 1,
+      "timestamp": "2026-04-23T00:28:07.885Z"
+    }
+  ],
+  "turnsSinceLastStalenessCheck": 1
+}

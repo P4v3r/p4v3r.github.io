@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="P4V3R Blog - Thoughts, tutorials, and personal posts">
+  <meta name="theme-color" content="#0a0a12">
+  <title>BLOG /// P4V3R ///</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+</head>
+<body>
+
+<!-- HEADER MARQUEE -->
+<div class="header-bar">
+  <div class="marquee-container">
+    <span class="marquee-text">
+      ▀▀▀ BLOG ▀▀▀ THOUGHTS ▀▀▀ TUTORIALS ▀▀▀ PERSONAL ▀▀▀ NO ALGORITHM ▀▀▀ 
+      HONEST OPINIONS ▀▀▀ WRITING IN THE SHADOWS ▀▀▀ WORDS & CODE ▀▀▀
+    </span>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link">[ HOME ]</a>
+  <a href="projects.html" class="nav-link">[ PROJECTS ]</a>
+  <a href="about.html" class="nav-link">[ SETUP ]</a>
+  <a href="favorites.html" class="nav-link">[ FAVORITES ]</a>
+  <a href="watching.html" class="nav-link">[ WATCHING ]</a>
+  <a href="blog.html" class="nav-link nav-link-active">[ BLOG ]</a>
+</nav>
+
+<!-- BACK HOME -->
+<a href="index.html" class="back-home">[ <<< BACK TO HOME ]</a>
+
+<!-- SECTION HEADER -->
+<section class="section-header">
+  BLOG POSTS
+</section>
+
+<!-- BLOG LIST -->
+<div class="blog-list" id="blog-list">
+  <!-- Loaded via JS -->
+  <div class="blog-post">
+    <div class="blog-post-title">Loading posts...</div>
+  </div>
+</div>
+
+<!-- BADGES -->
+<div class="badges-container">
+  <span class="badge">NO ALGORITHM</span>
+  <span class="badge badge-old">GENUINE THOUGHTS</span>
+  <span class="badge">WRITING SINCE 2026</span>
+</div>
+
+<!-- HIT COUNTER -->
+<div class="hit-counter">
+  <div class="counter-label">BLOG PAGE VISITS:</div>
+  <div class="counter-display" id="hit-counter">000042</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p class="footer-text">/// P4V3R'S DOMAIN © 2026 ///</p>
+  <div class="footer-links">
+    <a href="https://github.com/P4v3r" target="_blank">[ GITHUB ]</a>
+    <a href="https://t.me/P4v3r" target="_blank">[ TELEGRAM ]</a>
+    <a href="mailto:p4v3r@proton.me">[ EMAIL ]</a>
+    <a href="#top">[ BACK TO TOP ]</a>
+  </div>
+</footer>
+
+<script>
+function incrementHitCounter() {
+  let count = localStorage.getItem('p4v3r_blog_hits') || 42;
+  count = parseInt(count) + 1;
+  localStorage.setItem('p4v3r_blog_hits', count);
+  document.getElementById('hit-counter').textContent = String(count).padStart(6, '0');
+}
+
+function renderBlog() {
+  const container = document.getElementById('blog-list');
+  
+  // Blog posts data - hardcoded for now since we don't have server-side processing
+  // In a real scenario, you'd fetch markdown files or use a static site generator
+  const posts = [
+    {
+      title: "Why Privacy Matters in 2026",
+      date: "April 23, 2026",
+      excerpt: "In an age where every click is tracked, every conversation is analyzed, and every action is logged... personal privacy isn't paranoia, it's survival. Here's why I built void-sh, void-ai, and all my privacy projects.",
+      url: "blog/privacy-matters.html"
+    },
+    {
+      title: "Building a Y2K Portfolio Site in 2026",
+      date: "April 23, 2026",
+      excerpt: "Nostalgia is a powerful thing. While the world moves towards React apps and AI-generated minimalist designs, I decided to build a portfolio like it's 1999. Tables, marquees, and pure HTML/CSS vibes.",
+      url: "blog/y2k-portfolio.html"
+    }
+  ];
+  
+  let html = '';
+  
+  posts.forEach(post => {
+    html += `
+      <article class="blog-post">
+        <h2 class="blog-post-title">${post.title}</h2>
+        <div class="blog-post-date">📅 ${post.date}</div>
+        <p class="blog-post-excerpt">${post.excerpt}</p>
+        <a href="${post.url}" class="blog-post-link">[ READ MORE ]</a>
+      </article>
+    `;
+  });
+  
+  if (posts.length === 0) {
+    html = `
+      <div class="blog-post">
+        <h2 class="blog-post-title">Coming Soon...</h2>
+        <div class="blog-post-date">📅 TBD</div>
+        <p class="blog-post-excerpt">No blog posts yet. Check back soon for thoughts, tutorials, and personal opinions on tech, privacy, and life.</p>
+      </div>
+    `;
+  }
+  
+  container.innerHTML = html;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  incrementHitCounter();
+  renderBlog();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+# P4V3R's Y2K Portfolio Site
+
+**A portfolio website with late 90s/early 2000s aesthetic**
+
+---
+
+## 🌐 Live Site
+
+**URL:** https://p4v3r.github.io
+
+---
+
+## 📋 Pages
+
+| Page | Description |
+|------|-------------|
+| `index.html` | Home - Hero, quick projects, currently working/watching |
+| `projects.html` | All GitHub projects with personal reviews |
+| `about.html` | Setup: macOS, Coding, Privacy & Security |
+| `favorites.html` | Games, Anime, Manga, Movies, Music, Artists |
+| `watching.html` | Currently watching anime, movies, series |
+| `blog.html` | Blog posts |
+
+---
+
+## ⚙️ Configuration
+
+All content is driven by JSON config files in `_config/`:
+
+| File | Content |
+|------|---------|
+| `_config/projects.json` | GitHub projects with personal descriptions |
+| `_config/favorites.json` | All your favorites by category |
+| `_config/setup.json` | macOS, Coding, Privacy setup |
+| `_config/links.json` | Social links and contact |
+| `_config/currently.json` | Currently working on / watching |
+
+**To update content:** Just edit the JSON files. No code changes needed.
+
+---
+
+## 🚀 GitHub Pages Setup
+
+1. **Create repository:** `https://github.com/P4v3r/p4v3r.github.io`
+
+2. **Push code:**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git remote add origin https://github.com/P4v3r/p4v3r.github.io.git
+   git push -u origin main
+   ```
+
+3. **Enable GitHub Pages:**
+   - Go to repository **Settings** → **Pages**
+   - Under "Source", select: **main** branch
+   - Click **Save**
+
+4. **Wait 2-5 minutes** for deployment
+
+5. **Done!** Site available at: https://p4v3r.github.io
+
+---
+
+## 🔧 Local Development
+
+Serve locally with Python:
+
+```bash
+cd p4v3r.github.io
+python3 -m http.server 8000
+# Open http://localhost:8000
+```
+
+Or with any static file server.
+
+---
+
+## 🎨 Aesthetic
+
+Y2K meets Cyberpunk meets Anime 90s:
+
+- `<marquee>` scrolling banners
+- Neon color palette (pink, purple, cyan)
+- Scanline effects
+- Hit counters (fake, stored in localStorage)
+- "Under construction" sections
+- Table-based layouts
+- Glitch text animations
+
+---
+
+## 📁 Project Structure
+
+```
+p4v3r.github.io/
+├── index.html          # Main page
+├── projects.html       # Projects page
+├── about.html          # Setup page
+├── favorites.html      # Favorites page
+├── watching.html       # Currently watching
+├── blog.html           # Blog index
+├── blog/
+│   ├── privacy-matters.md
+│   └── y2k-portfolio.md
+├── _config/
+│   ├── projects.json
+│   ├── favorites.json
+│   ├── setup.json
+│   ├── links.json
+│   └── currently.json
+├── css/
+│   └── style.css       # Y2K styling
+├── .nojekyll           # Prevent Jekyll processing
+└── README.md
+```
+
+---
+
+## 🔒 Privacy
+
+- No tracking scripts
+- No analytics
+- No cookies
+- No data collection
+- Pure static HTML only
+
+---
+
+## 📜 License
+
+MIT - Do whatever you want with it.
+
+---
+
+**never give up try again like plankton**

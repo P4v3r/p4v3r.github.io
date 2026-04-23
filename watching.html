@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="P4V3R - Currently Watching - Anime, Movies, Series">
+  <meta name="theme-color" content="#0a0a12">
+  <title>WATCHING /// P4V3R ///</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+</head>
+<body>
+
+<!-- HEADER MARQUEE -->
+<div class="header-bar">
+  <div class="marquee-container">
+    <span class="marquee-text">
+      ▀▀▀ WATCHING NOW ▀▀▀ CURRENTLY BINGEING ▀▀▀ NEW EPISODES ▀▀▀ MIDNIGHT ANIME SESSIONS ▀▀▀ 
+      MOVIE NIGHTS ▀▀▀ SERIE BINGES ▀▀▀ WHAT'S ON MY SCREEN ▀▀▀
+    </span>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link">[ HOME ]</a>
+  <a href="projects.html" class="nav-link">[ PROJECTS ]</a>
+  <a href="about.html" class="nav-link">[ SETUP ]</a>
+  <a href="favorites.html" class="nav-link">[ FAVORITES ]</a>
+  <a href="watching.html" class="nav-link nav-link-active">[ WATCHING ]</a>
+  <a href="blog.html" class="nav-link">[ BLOG ]</a>
+</nav>
+
+<!-- BACK HOME -->
+<a href="index.html" class="back-home">[ <<< BACK TO HOME ]</a>
+
+<!-- SECTION HEADER -->
+<section class="section-header">
+  WHAT I'M WATCHING
+</section>
+
+<!-- WATCHING CONTAINER -->
+<div class="list-container" id="watching-container">
+  <!-- Loaded via JS -->
+  <div class="list-section" data-label="Loading...">
+    <ul class="list-items">
+      <li>Loading...</li>
+    </ul>
+  </div>
+</div>
+
+<!-- BADGES -->
+<div class="badges-container">
+  <span class="badge">ALWAYS WATCHING</span>
+  <span class="badge badge-old">UPDATED REGULARLY</span>
+  <span class="badge">RECOMMENDATIONS WELCOME</span>
+</div>
+
+<!-- HIT COUNTER -->
+<div class="hit-counter">
+  <div class="counter-label">WATCHING PAGE VISITS:</div>
+  <div class="counter-display" id="hit-counter">000042</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p class="footer-text">/// P4V3R'S DOMAIN © 2026 ///</p>
+  <div class="footer-links">
+    <a href="https://github.com/P4v3r" target="_blank">[ GITHUB ]</a>
+    <a href="https://t.me/P4v3r" target="_blank">[ TELEGRAM ]</a>
+    <a href="mailto:p4v3r@proton.me">[ EMAIL ]</a>
+    <a href="#top">[ BACK TO TOP ]</a>
+  </div>
+</footer>
+
+<script>
+async function loadConfig(filename) {
+  try {
+    const response = await fetch(`_config/${filename}`);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return await response.json();
+  } catch (error) {
+    console.error(`Error loading ${filename}:`, error);
+    return null;
+  }
+}
+
+function incrementHitCounter() {
+  let count = localStorage.getItem('p4v3r_watching_hits') || 42;
+  count = parseInt(count) + 1;
+  localStorage.setItem('p4v3r_watching_hits', count);
+  document.getElementById('hit-counter').textContent = String(count).padStart(6, '0');
+}
+
+async function renderWatching() {
+  const data = await loadConfig('currently.json');
+  const container = document.getElementById('watching-container');
+  if (!data || !container) return;
+  
+  let html = '';
+  
+  // Anime section
+  if (data.watching && data.watching.anime && data.watching.anime.length > 0) {
+    html += `<div class="list-section" data-label="📺 Currently Watching Anime">
+      <ul class="list-items">`;
+    data.watching.anime.forEach(item => {
+      html += `<li><span class="emoji">${item.emoji || '📺'}</span> ${item.title} - ${item.episode}</li>`;
+    });
+    html += `</ul></div>`;
+  }
+  
+  // Movies section
+  if (data.watching && data.watching.movies && data.watching.movies.length > 0) {
+    html += `<div class="list-section" data-label="🎬 Currently Watching Movies">
+      <ul class="list-items">`;
+    data.watching.movies.forEach(item => {
+      html += `<li><span class="emoji">${item.emoji || '🎬'}</span> ${item.title} - ${item.note}</li>`;
+    });
+    html += `</ul></div>`;
+  }
+  
+  // Series section
+  if (data.watching && data.watching.series && data.watching.series.length > 0) {
+    html += `<div class="list-section" data-label="📺 Currently Watching Series">
+      <ul class="list-items">`;
+    data.watching.series.forEach(item => {
+      html += `<li><span class="emoji">${item.emoji || '📺'}</span> ${item.title} - ${item.episode}</li>`;
+    });
+    html += `</ul></div>`;
+  }
+  
+  // Reading section
+  if (data.reading && data.reading.length > 0) {
+    html += `<div class="list-section" data-label="📖 Currently Reading">
+      <ul class="list-items">`;
+    data.reading.forEach(item => {
+      html += `<li><span class="emoji">${item.emoji || '📖'}</span> ${item.title} - ${item.note}</li>`;
+    });
+    html += `</ul></div>`;
+  }
+  
+  container.innerHTML = html || '<div class="list-section" data-label="Nothing here yet..."><ul class="list-items"><li>Check back later!</li></ul></div>';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  incrementHitCounter();
+  renderWatching();
+});
+</script>
+
+</body>
+</html>
