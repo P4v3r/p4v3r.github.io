@@ -1,47 +1,21 @@
 {
   "games": [
-    "Final Fantasy VII",
-    "Persona 5",
-    "Undertale",
-    "Hollow Knight",
-    "Disco Elysium"
+    "Final Fantasy X"
   ],
   "anime": [
-    "Cowboy Bebop",
-    "Neon Genesis Evangelion",
-    "Serial Experiments Lain",
-    "Trigun",
-    "FLCL",
     "Paranoia Agent"
   ],
   "manga": [
-    "Berserk",
-    "Akira",
-    "Monster",
-    "One Piece",
     "Vagabond"
   ],
   "movies": [
-    "Blade Runner 2049",
-    "The Matrix",
-    "Fight Club",
-    "Memento",
-    "Donnie Darko",
-    "Eternal Sunshine of the Spotless Mind"
+    "Blade Runner 2049"
   ],
   "music": [
-    "Daft Punk",
-    "The Weeknd",
-    "Radiohead",
-    "Massive Attack",
-    "Portishead",
-    "Boards of Canada",
-    "Nujabes"
+    "Daft Punk"
   ],
   "artists": [
-    "Makoto Shinkai",
-    "Satoshi Kon",
-    "Yoko Kanno",
-    "Gustavo Sorral"
+    "-",
+    "-"
   ]
 }

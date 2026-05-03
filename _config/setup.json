@@ -1,18 +1,17 @@
 {
   "macos": {
-    "machine": "MacBook Pro (M3 Max)",
-    "os": "macOS Sequoia 15.x",
+    "machine": "MacBook Pro (M1)",
+    "os": "macOS Sequoia",
     "launcher": "Raycast",
-    "terminal": "WezTerm + Zsh + Starship",
-    "editor": "Neovim / Zed",
-    "browser": "Firefox (primary) + Safari (secondary)",
+    "terminal": "Ghostty / cmux",
+    "editor": "Neovim",
+    "browser": "Brave (primary) + Firefox (secondary)",
     "music": "Spotify",
     "messenger": "Telegram",
-    "productivity": "Obsidian, Notion"
+    "productivity": "Obsidian"
   },
   "coding": {
     "ai_assistants": [
-      "Claude Code (main agent)",
       "pi-coding-agent (custom setup)",
       "Copilot for autocomplete"
     ],
@@ -26,7 +25,7 @@
     "vpn": "Self-hosted WireGuard",
     "dns": "Encrypted DNS (DoH)",
     "mfa": "YubiKey + TOTP",
-    "passwords": "Bitwarden",
+    "passwords": "KeePassXC",
     "messenger": "Signal + Telegram",
     "email": "Proton Mail",
     "files": " VeraCrypt encrypted volumes",

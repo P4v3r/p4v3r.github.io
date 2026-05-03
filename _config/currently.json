@@ -2,52 +2,52 @@
   "working_on": [
     {
       "project": "void-sh",
-      "status": "Adding new encryption features",
+      "status": "",
       "url": "https://github.com/P4v3r/void-sh"
     },
     {
       "project": "This portfolio site",
-      "status": "Building a Y2K aesthetic space",
+      "status": "",
       "url": null
     },
     {
-      "project": "Privacy experiments",
-      "status": "Testing new tools and configs",
+      "project": "",
+      "status": "",
       "url": null
     }
   ],
   "watching": {
     "anime": [
       {
-        "title": "Frieren",
-        "episode": "Watching weekly",
+        "title": "",
+        "episode": "",
         "emoji": "🧝"
       },
       {
-        "title": "Vinland Saga Season 2",
-        "episode": "Catching up",
+        "title": "",
+        "episode": "",
         "emoji": "⚔️"
       }
     ],
     "movies": [
       {
-        "title": "Dune: Part Two",
-        "note": "Second viewing",
+        "title": "",
+        "note": "",
         "emoji": "🏜️"
       }
     ],
     "series": [
       {
-        "title": "Severance",
-        "episode": "Waiting for Season 2",
+        "title": "",
+        "episode": "",
         "emoji": "🫠"
       }
     ]
   },
   "reading": [
     {
-      "title": "Berserk",
-      "note": "Rereading",
+      "title": "",
+      "note": "",
       "emoji": "📖"
     }
   ]
