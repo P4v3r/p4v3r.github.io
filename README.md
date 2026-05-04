@@ -91,5 +91,3 @@ p4v3r.github.io/
 ## 📜 License
 
 MIT - Do whatever you want with it.
-
----
