@@ -35,8 +35,6 @@ All content is driven by JSON config files in `_config/`:
 | `_config/links.json` | Social links and contact |
 | `_config/currently.json` | Currently working on / watching |
 
-**To update content:** Just edit the JSON files. No code changes needed.
-
 ---
 
 ## 🎨 Aesthetic
