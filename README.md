@@ -95,5 +95,3 @@ p4v3r.github.io/
 MIT - Do whatever you want with it.
 
 ---
-
-**never give up try again like plankton**
