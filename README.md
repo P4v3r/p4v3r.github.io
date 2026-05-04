@@ -39,44 +39,6 @@ All content is driven by JSON config files in `_config/`:
 
 ---
 
-## 🚀 GitHub Pages Setup
-
-1. **Create repository:** `https://github.com/P4v3r/p4v3r.github.io`
-
-2. **Push code:**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git remote add origin https://github.com/P4v3r/p4v3r.github.io.git
-   git push -u origin main
-   ```
-
-3. **Enable GitHub Pages:**
-   - Go to repository **Settings** → **Pages**
-   - Under "Source", select: **main** branch
-   - Click **Save**
-
-4. **Wait 2-5 minutes** for deployment
-
-5. **Done!** Site available at: https://p4v3r.github.io
-
----
-
-## 🔧 Local Development
-
-Serve locally with Python:
-
-```bash
-cd p4v3r.github.io
-python3 -m http.server 8000
-# Open http://localhost:8000
-```
-
-Or with any static file server.
-
----
-
 ## 🎨 Aesthetic
 
 Y2K meets Cyberpunk meets Anime 90s:
