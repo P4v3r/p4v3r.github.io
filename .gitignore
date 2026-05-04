@@ -2,3 +2,6 @@
 *docs
 .nojekyll
 .DS_Store
+node_modules/
+.env
+.pi/
